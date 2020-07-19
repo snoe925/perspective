@@ -29,4 +29,5 @@ jobs:
         pip install pyarrow
     - name: Install perspective-python
       run: |
-        pip install perspective-python
+        cd python
+        pip install -v perspective-python
