@@ -25,7 +25,7 @@ jobs:
         cmake --version
     - name: Install C++ dependencies
       run: |
-        vcpkg install --triplet x64-windows boost
+        $Env:path += ";${env:BOOST_ROOT_1_72_0}\lib"
         vcpkg install --triplet x64-windows tbb
         vcpkg install --triplet x64-windows pybind11l
     - name: Install Python dependencies
