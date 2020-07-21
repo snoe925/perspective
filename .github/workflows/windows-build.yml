@@ -17,6 +17,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: ilammy/msvc-dev-cmd@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+  
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
@@ -35,4 +39,5 @@ jobs:
       run: |
         cd python
         cd perspective
+        yarn build_python
         pip install -v .
