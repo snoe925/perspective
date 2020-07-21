@@ -27,13 +27,14 @@ jobs:
     - name: Install C++ dependencies
       run: |
         $Env:path += ";${env:BOOST_ROOT_1_72_0}\lib"
-        vcpkg install --triplet x64-windows tbb
-        vcpkg install --triplet x64-windows pybind11
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pyarrow
+        pip install pyarrow=0.16
+        pip install tbb
+        pip install pybind11=2.4.0
     - name: Install perspective-python
       run: |
         cd python
-        pip install -v perspective-python
+        cd perspective
+        pip install -v .
