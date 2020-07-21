@@ -35,9 +35,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install tbb
+    - name: yarn build_python
+      run: yarn build_python
     - name: Install perspective-python
       run: |
         cd python
         cd perspective
-        yarn build_python
         pip install -v .
